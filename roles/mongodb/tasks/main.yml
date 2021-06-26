@@ -1,0 +1,6 @@
+- name: print Component name
+  debug;
+    msg: Component = MongoDB
+
+  
+
