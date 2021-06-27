@@ -1,5 +1,5 @@
 -name: Demo on playbook
- hosts: all
+ hosts: 172.31.53.142
  tasks:
    -name: print hello world
       debug: #{msg: "Hello World"}
