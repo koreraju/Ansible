@@ -6,6 +6,9 @@
   debug:
       msg: URL = {{ URL }}
 
+- name: load sample
+  include_tasks: sample.yml
+
 
 
 
