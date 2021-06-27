@@ -1,4 +1,4 @@
-- name: install Nginx
+- name: Install Nginx
   yum:
     name: nginx
     state: present
