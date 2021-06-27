@@ -3,8 +3,9 @@
     msg: Hello from a role
 
 - name: print URL
-  - debug:
+  debug:
       msg: URL = {{ URL }}
+
 
 
 
