@@ -1,0 +1,68 @@
+- name: Demo on Variables
+  hosts: all
+  vars:
+    URL: play.example.com
+  tasks:
+    - name: Print Variable
+      debug:
+        msg: URL = {{ URL }}
+    - name: Print variable from task
+      vars:
+        URL: task.example.com
+      debug:
+        msg: URL = {{ URL }}
+
+- name: Demo on Variabes from files
+  hosts: all
+  vars_files:
+    - example-vars.yml
+  tasks:
+    - name: Print variable
+      debug:
+        msg: URL == {{ URL }}
+
+- name: Demo on variables from user input
+  hosts: all
+  vars_prompt:
+    - name: URL
+      prompt: Enter URL
+      private: false
+  tasks:
+    - name: Print variable
+      debug:
+        msg: URL == {{ URL }}
+
+- name: Demo on variables from inventory
+  hosts: all
+  tasks:
+    - name: Print variable
+      debug:
+        msg: URL == {{ URL }}
+
+- name: Print Fact
+  hosts: all
+  tasks:
+    - name: Print fact
+      debug:
+        msg: Python Version = {{ ansible_python_version }}
+
+- name: Register a variable
+  hosts: all
+  tasks:
+    - name: Grab howmany users are logged in
+      shell: who  | wc -l
+      register: out
+
+    - name: Print Out
+      debug:
+        msg: Number of User Logged in = {{ out.stdout }}  ## If the value is not starting with variable , yet you have variable some where in the value
+        ## then no need to quote the value.
+
+    - name: Decalare a variable
+      set_fact:
+        NO_OF_USERS: "{{ out.stdout }}"
+
+    - name: Print No of users from  a new var
+      debug:
+        msg: "{{ NO_OF_USERS }}"  ## If a value starts with a variable then you have quote the value
+
