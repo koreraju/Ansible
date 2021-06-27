@@ -1,8 +1,8 @@
 - name: setup roboshop project
-  hosts: FRONTEND
+  hosts: all
   become: yes
   roles:
-    -name: Load Frontend role
+    -name: Load frontend role
       role: frontend
 
 - name: setup roboshop project
