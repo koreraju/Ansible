@@ -9,7 +9,7 @@ if [ -z "${COMPONENT}" ]; then
 fi
 
 LID=lt-04292ada2a6f67c80
-LVER=1
+LVER=2
 
 ## Validate If Instance is already there
 
@@ -26,7 +26,6 @@ INSTANCE_CREATE() {
     DNS_UPDATE
     return 0
   fi
-
 
   if [ "${INSTANCE_STATE}" = "stopped" ]; then
     echo "${COMPONENT} Instance already exists!!"
