@@ -1,18 +1,13 @@
 - name: setup roboshop project
-  hosts: all
+  hosts: FRONTEND
   become: yes
   roles:
     -name: Load frontend role
       role: frontend
 
-- name: setup roboshop project
-  hosts: MongoDB
-  roles:
-    -name: Load MongoDb role
-    role: mongodb
+#- name: setup roboshop project
+#  hosts: MongoDB
+#  roles:
+#    -name: Load MongoDb role
+#    role: mongodb
 
-name: setup roboshop project
-  hosts: MongoDB
-  roles:
-    -name: Load  role MongoDB
-    role: MongoDB
