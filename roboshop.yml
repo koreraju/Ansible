@@ -2,7 +2,7 @@
   hosts: FRONTEND
   become: yes
   roles:
-    -name: Load frontend role
+    -name: Load Frontend role
       role: frontend
 
 #- name: setup roboshop project
@@ -10,4 +10,5 @@
 #  roles:
 #    -name: Load MongoDb role
 #    role: mongodb
+
 
