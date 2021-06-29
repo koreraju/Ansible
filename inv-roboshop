@@ -1,23 +1,5 @@
 [FRONTEND]
 frontend.ansible
-[MONGODB]
-mongodb.ansible
-[CATALOGUE]
-catalogue.ansible
-[REDIS]
-redis.ansible
-[USER]
-user.ansible
-[CART]
-cart.ansible
-[MYSQL]
-mysql.ansible
-[SHIPPING]
-shipping.ansible
-[RABBITMQ]
-rabbitmq.ansible
-[PAYMENT]
-payment.ansible
 
 
 
